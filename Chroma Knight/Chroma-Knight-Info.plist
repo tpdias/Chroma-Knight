@@ -4,9 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Retro Gaming</string>
+		<string>Retro Gaming.ttf</string>
 	</array>
-	<key></key>
-	<string></string>
 </dict>
 </plist>

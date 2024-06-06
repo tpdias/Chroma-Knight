@@ -7,31 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A74ED3112C11DCC400A83E2A /* Retro Gaming.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A74ED3102C11DCC400A83E2A /* Retro Gaming.ttf */; };
-		A76DA9872C0666240052C11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76DA9862C0666240052C11E /* AppDelegate.swift */; };
-		A76DA98D2C0666240052C11E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76DA98C2C0666240052C11E /* GameScene.swift */; };
-		A76DA98F2C0666240052C11E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76DA98E2C0666240052C11E /* GameViewController.swift */; };
-		A76DA9922C0666240052C11E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A76DA9912C0666240052C11E /* Base */; };
-		A76DA9942C0666260052C11E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76DA9932C0666260052C11E /* Assets.xcassets */; };
-		A76DA9972C0666260052C11E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A76DA9962C0666260052C11E /* Base */; };
-		A76DA9A02C0666AA0052C11E /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76DA99F2C0666AA0052C11E /* MenuScene.swift */; };
+		A74ED31F2C11DD2800A83E2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED31E2C11DD2800A83E2A /* AppDelegate.swift */; };
+		A74ED3252C11DD2800A83E2A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED3242C11DD2800A83E2A /* GameScene.swift */; };
+		A74ED3272C11DD2800A83E2A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED3262C11DD2800A83E2A /* GameViewController.swift */; };
+		A74ED32A2C11DD2800A83E2A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A74ED3292C11DD2800A83E2A /* Base */; };
+		A74ED32C2C11DD2A00A83E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A74ED32B2C11DD2A00A83E2A /* Assets.xcassets */; };
+		A74ED32F2C11DD2A00A83E2A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A74ED32E2C11DD2A00A83E2A /* Base */; };
+		A74ED3382C11DDBD00A83E2A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED3372C11DDBD00A83E2A /* Utils.swift */; };
+		A74ED33A2C11DDEB00A83E2A /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED3392C11DDEB00A83E2A /* MenuScene.swift */; };
+		A74ED33C2C11DE0500A83E2A /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED33B2C11DE0500A83E2A /* OptionsScene.swift */; };
+		A74ED33F2C11DF6E00A83E2A /* Retro Gaming.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A74ED33E2C11DF6E00A83E2A /* Retro Gaming.ttf */; };
+		A74ED3412C11E04E00A83E2A /* UserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED3402C11E04E00A83E2A /* UserConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A74ED30F2C11DC9A00A83E2A /* Chroma-Knight-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Chroma-Knight-Info.plist"; sourceTree = SOURCE_ROOT; };
-		A74ED3102C11DCC400A83E2A /* Retro Gaming.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Retro Gaming.ttf"; sourceTree = "<group>"; };
-		A76DA9832C0666240052C11E /* Chroma Knight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chroma Knight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A76DA9862C0666240052C11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A76DA98C2C0666240052C11E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		A76DA98E2C0666240052C11E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		A76DA9912C0666240052C11E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A76DA9932C0666260052C11E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A76DA9962C0666260052C11E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A76DA99F2C0666AA0052C11E /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		A74ED31B2C11DD2800A83E2A /* Chroma Knight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chroma Knight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A74ED31E2C11DD2800A83E2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A74ED3242C11DD2800A83E2A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		A74ED3262C11DD2800A83E2A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		A74ED3292C11DD2800A83E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A74ED32B2C11DD2A00A83E2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A74ED32E2C11DD2A00A83E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A74ED3372C11DDBD00A83E2A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A74ED3392C11DDEB00A83E2A /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		A74ED33B2C11DE0500A83E2A /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
+		A74ED33D2C11DF5400A83E2A /* Chroma-Knight-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Chroma-Knight-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A74ED33E2C11DF6E00A83E2A /* Retro Gaming.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Retro Gaming.ttf"; sourceTree = "<group>"; };
+		A74ED3402C11E04E00A83E2A /* UserConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A76DA9802C0666240052C11E /* Frameworks */ = {
+		A74ED3182C11DD2800A83E2A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,56 +47,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A76DA97A2C0666240052C11E = {
+		A74ED3122C11DD2800A83E2A = {
 			isa = PBXGroup;
 			children = (
-				A76DA9852C0666240052C11E /* Chroma Knight */,
-				A76DA9842C0666240052C11E /* Products */,
+				A74ED31D2C11DD2800A83E2A /* Chroma Knight */,
+				A74ED31C2C11DD2800A83E2A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A76DA9842C0666240052C11E /* Products */ = {
+		A74ED31C2C11DD2800A83E2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A76DA9832C0666240052C11E /* Chroma Knight.app */,
+				A74ED31B2C11DD2800A83E2A /* Chroma Knight.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A76DA9852C0666240052C11E /* Chroma Knight */ = {
+		A74ED31D2C11DD2800A83E2A /* Chroma Knight */ = {
 			isa = PBXGroup;
 			children = (
-				A74ED30F2C11DC9A00A83E2A /* Chroma-Knight-Info.plist */,
-				A76DA9862C0666240052C11E /* AppDelegate.swift */,
-				A76DA9A12C0666B10052C11E /* Scenes */,
-				A76DA98E2C0666240052C11E /* GameViewController.swift */,
-				A76DA9902C0666240052C11E /* Main.storyboard */,
-				A76DA9932C0666260052C11E /* Assets.xcassets */,
-				A76DA9952C0666260052C11E /* LaunchScreen.storyboard */,
-				A74ED3102C11DCC400A83E2A /* Retro Gaming.ttf */,
+				A74ED33D2C11DF5400A83E2A /* Chroma-Knight-Info.plist */,
+				A74ED3362C11DDAA00A83E2A /* Utils */,
+				A74ED3352C11DD9C00A83E2A /* Scenes */,
+				A74ED31E2C11DD2800A83E2A /* AppDelegate.swift */,
+				A74ED3262C11DD2800A83E2A /* GameViewController.swift */,
+				A74ED3402C11E04E00A83E2A /* UserConfig.swift */,
+				A74ED3282C11DD2800A83E2A /* Main.storyboard */,
+				A74ED32B2C11DD2A00A83E2A /* Assets.xcassets */,
+				A74ED32D2C11DD2A00A83E2A /* LaunchScreen.storyboard */,
+				A74ED33E2C11DF6E00A83E2A /* Retro Gaming.ttf */,
 			);
 			path = "Chroma Knight";
 			sourceTree = "<group>";
 		};
-		A76DA9A12C0666B10052C11E /* Scenes */ = {
+		A74ED3352C11DD9C00A83E2A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				A76DA98C2C0666240052C11E /* GameScene.swift */,
-				A76DA99F2C0666AA0052C11E /* MenuScene.swift */,
+				A74ED3392C11DDEB00A83E2A /* MenuScene.swift */,
+				A74ED3242C11DD2800A83E2A /* GameScene.swift */,
+				A74ED33B2C11DE0500A83E2A /* OptionsScene.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A74ED3362C11DDAA00A83E2A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A74ED3372C11DDBD00A83E2A /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A76DA9822C0666240052C11E /* Chroma Knight */ = {
+		A74ED31A2C11DD2800A83E2A /* Chroma Knight */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A76DA99A2C0666260052C11E /* Build configuration list for PBXNativeTarget "Chroma Knight" */;
+			buildConfigurationList = A74ED3322C11DD2A00A83E2A /* Build configuration list for PBXNativeTarget "Chroma Knight" */;
 			buildPhases = (
-				A76DA97F2C0666240052C11E /* Sources */,
-				A76DA9802C0666240052C11E /* Frameworks */,
-				A76DA9812C0666240052C11E /* Resources */,
+				A74ED3172C11DD2800A83E2A /* Sources */,
+				A74ED3182C11DD2800A83E2A /* Frameworks */,
+				A74ED3192C11DD2800A83E2A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -98,25 +115,25 @@
 			);
 			name = "Chroma Knight";
 			productName = "Chroma Knight";
-			productReference = A76DA9832C0666240052C11E /* Chroma Knight.app */;
+			productReference = A74ED31B2C11DD2800A83E2A /* Chroma Knight.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A76DA97B2C0666240052C11E /* Project object */ = {
+		A74ED3132C11DD2800A83E2A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					A76DA9822C0666240052C11E = {
+					A74ED31A2C11DD2800A83E2A = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
-			buildConfigurationList = A76DA97E2C0666240052C11E /* Build configuration list for PBXProject "Chroma Knight" */;
+			buildConfigurationList = A74ED3162C11DD2800A83E2A /* Build configuration list for PBXProject "Chroma Knight" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,57 +141,60 @@
 				en,
 				Base,
 			);
-			mainGroup = A76DA97A2C0666240052C11E;
-			productRefGroup = A76DA9842C0666240052C11E /* Products */;
+			mainGroup = A74ED3122C11DD2800A83E2A;
+			productRefGroup = A74ED31C2C11DD2800A83E2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A76DA9822C0666240052C11E /* Chroma Knight */,
+				A74ED31A2C11DD2800A83E2A /* Chroma Knight */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A76DA9812C0666240052C11E /* Resources */ = {
+		A74ED3192C11DD2800A83E2A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A76DA9922C0666240052C11E /* Base in Resources */,
-				A76DA9942C0666260052C11E /* Assets.xcassets in Resources */,
-				A76DA9972C0666260052C11E /* Base in Resources */,
-				A74ED3112C11DCC400A83E2A /* Retro Gaming.ttf in Resources */,
+				A74ED32A2C11DD2800A83E2A /* Base in Resources */,
+				A74ED32C2C11DD2A00A83E2A /* Assets.xcassets in Resources */,
+				A74ED32F2C11DD2A00A83E2A /* Base in Resources */,
+				A74ED33F2C11DF6E00A83E2A /* Retro Gaming.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A76DA97F2C0666240052C11E /* Sources */ = {
+		A74ED3172C11DD2800A83E2A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A76DA98D2C0666240052C11E /* GameScene.swift in Sources */,
-				A76DA9A02C0666AA0052C11E /* MenuScene.swift in Sources */,
-				A76DA98F2C0666240052C11E /* GameViewController.swift in Sources */,
-				A76DA9872C0666240052C11E /* AppDelegate.swift in Sources */,
+				A74ED3252C11DD2800A83E2A /* GameScene.swift in Sources */,
+				A74ED3272C11DD2800A83E2A /* GameViewController.swift in Sources */,
+				A74ED33A2C11DDEB00A83E2A /* MenuScene.swift in Sources */,
+				A74ED31F2C11DD2800A83E2A /* AppDelegate.swift in Sources */,
+				A74ED3382C11DDBD00A83E2A /* Utils.swift in Sources */,
+				A74ED33C2C11DE0500A83E2A /* OptionsScene.swift in Sources */,
+				A74ED3412C11E04E00A83E2A /* UserConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A76DA9902C0666240052C11E /* Main.storyboard */ = {
+		A74ED3282C11DD2800A83E2A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A76DA9912C0666240052C11E /* Base */,
+				A74ED3292C11DD2800A83E2A /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A76DA9952C0666260052C11E /* LaunchScreen.storyboard */ = {
+		A74ED32D2C11DD2A00A83E2A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A76DA9962C0666260052C11E /* Base */,
+				A74ED32E2C11DD2A00A83E2A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -182,7 +202,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A76DA9982C0666260052C11E /* Debug */ = {
+		A74ED3302C11DD2A00A83E2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -245,7 +265,7 @@
 			};
 			name = Debug;
 		};
-		A76DA9992C0666260052C11E /* Release */ = {
+		A74ED3312C11DD2A00A83E2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -301,7 +321,7 @@
 			};
 			name = Release;
 		};
-		A76DA99B2C0666260052C11E /* Debug */ = {
+		A74ED3332C11DD2A00A83E2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -315,8 +335,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,7 +350,7 @@
 			};
 			name = Debug;
 		};
-		A76DA99C2C0666260052C11E /* Release */ = {
+		A74ED3342C11DD2A00A83E2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -344,8 +364,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -362,25 +382,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A76DA97E2C0666240052C11E /* Build configuration list for PBXProject "Chroma Knight" */ = {
+		A74ED3162C11DD2800A83E2A /* Build configuration list for PBXProject "Chroma Knight" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A76DA9982C0666260052C11E /* Debug */,
-				A76DA9992C0666260052C11E /* Release */,
+				A74ED3302C11DD2A00A83E2A /* Debug */,
+				A74ED3312C11DD2A00A83E2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A76DA99A2C0666260052C11E /* Build configuration list for PBXNativeTarget "Chroma Knight" */ = {
+		A74ED3322C11DD2A00A83E2A /* Build configuration list for PBXNativeTarget "Chroma Knight" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A76DA99B2C0666260052C11E /* Debug */,
-				A76DA99C2C0666260052C11E /* Release */,
+				A74ED3332C11DD2A00A83E2A /* Debug */,
+				A74ED3342C11DD2A00A83E2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A76DA97B2C0666240052C11E /* Project object */;
+	rootObject = A74ED3132C11DD2800A83E2A /* Project object */;
 }
