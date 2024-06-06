@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A74ED3112C11DCC400A83E2A /* Retro Gaming.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A74ED3102C11DCC400A83E2A /* Retro Gaming.ttf */; };
 		A76DA9872C0666240052C11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76DA9862C0666240052C11E /* AppDelegate.swift */; };
 		A76DA98D2C0666240052C11E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76DA98C2C0666240052C11E /* GameScene.swift */; };
 		A76DA98F2C0666240052C11E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76DA98E2C0666240052C11E /* GameViewController.swift */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A74ED30F2C11DC9A00A83E2A /* Chroma-Knight-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Chroma-Knight-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A74ED3102C11DCC400A83E2A /* Retro Gaming.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Retro Gaming.ttf"; sourceTree = "<group>"; };
 		A76DA9832C0666240052C11E /* Chroma Knight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chroma Knight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76DA9862C0666240052C11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A76DA98C2C0666240052C11E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -57,12 +60,14 @@
 		A76DA9852C0666240052C11E /* Chroma Knight */ = {
 			isa = PBXGroup;
 			children = (
+				A74ED30F2C11DC9A00A83E2A /* Chroma-Knight-Info.plist */,
 				A76DA9862C0666240052C11E /* AppDelegate.swift */,
 				A76DA9A12C0666B10052C11E /* Scenes */,
 				A76DA98E2C0666240052C11E /* GameViewController.swift */,
 				A76DA9902C0666240052C11E /* Main.storyboard */,
 				A76DA9932C0666260052C11E /* Assets.xcassets */,
 				A76DA9952C0666260052C11E /* LaunchScreen.storyboard */,
+				A74ED3102C11DCC400A83E2A /* Retro Gaming.ttf */,
 			);
 			path = "Chroma Knight";
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				A76DA9922C0666240052C11E /* Base in Resources */,
 				A76DA9942C0666260052C11E /* Assets.xcassets in Resources */,
 				A76DA9972C0666260052C11E /* Base in Resources */,
+				A74ED3112C11DCC400A83E2A /* Retro Gaming.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +310,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DFJUFQ6A3N;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Chroma-Knight-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -332,6 +339,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DFJUFQ6A3N;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Chroma-Knight-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

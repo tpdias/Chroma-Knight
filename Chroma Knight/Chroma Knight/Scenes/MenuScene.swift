@@ -22,6 +22,7 @@ class MenuScene: SKScene {
         
         titleLabel = SKLabelNode(text: "Chroma Knight")
         titleLabel.fontSize = 64
+        titleLabel.fontName = "Retro Gaming"
         titleLabel.fontColor = .black
         titleLabel.position = CGPoint(x: size.width/2, y: size.height/1.5)
         
