@@ -11,6 +11,7 @@ import SpriteKit
 class MenuScene: SKScene {
     var background: SKSpriteNode
     var titleLabel: SKLabelNode
+    var titleShadow: SKLabelNode
     
     var playLabel: SKLabelNode
     var playButton: SKSpriteNode
@@ -19,17 +20,25 @@ class MenuScene: SKScene {
     var soundButton: SKSpriteNode
     
     override init(size: CGSize) {
+        
         background = SKSpriteNode(imageNamed: "menuBackground")
         background.scale(to: size)
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.zPosition = -1
+        background.alpha = 0.7
         background.name = "background"
         
         titleLabel = SKLabelNode(text: "Chroma Knight")
         titleLabel.fontSize = 48
         titleLabel.fontName = "Retro Gaming"
-        titleLabel.fontColor = .black
+        titleLabel.fontColor = .main
         titleLabel.position = CGPoint(x: size.width/2, y: size.height/1.5)
+        
+        titleShadow = SKLabelNode(text: "Chroma Knight")
+        titleShadow.fontSize = 48
+        titleShadow.fontName = "Retro Gaming"
+        titleShadow.fontColor = .black
+        titleShadow.position = CGPoint(x: titleLabel.position.x + 3, y: titleLabel.position.y - 5)
                
         playButton = SKSpriteNode(imageNamed: "playButton")
         playButton.scale(to: CGSize(width: 200, height: 100))
@@ -41,7 +50,7 @@ class MenuScene: SKScene {
         playLabel.fontColor = .black
         playLabel.fontSize = 24
         playLabel.fontName = "Retro Gaming"
-        playLabel.position = playButton.position
+        playLabel.position = CGPoint(x: playButton.position.x, y: playButton.position.y + 5)
         playLabel.name = "playButton"
         
         optionsButton = SKSpriteNode(imageNamed: "optionsButton")
@@ -61,6 +70,7 @@ class MenuScene: SKScene {
         addChild(background)
         addChild(playButton)
         addChild(optionsButton)
+        addChild(titleShadow)
         addChild(titleLabel)
         addChild(playLabel)
     }
@@ -80,11 +90,11 @@ class MenuScene: SKScene {
             if let name = touchedNode.name {
                 switch name {
                 case "playButton":
-                    let gameScene = GameScene(size: self.size)
-                    gameScene.scaleMode = self.scaleMode
+                    let levelOneScene = LevelOneScene(size: self.size)
+                    levelOneScene.scaleMode = self.scaleMode
                     animateButton(button: playButton)
                     playLabel.position.y -= 10
-                    transitionToNextScene(scene: gameScene)
+                    transitionToNextScene(scene: levelOneScene)
                 case "optionsButton":
                     let optionsScene = OptionsScene(size: self.size)
                     optionsScene.scaleMode = self.scaleMode

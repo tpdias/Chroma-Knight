@@ -11,10 +11,12 @@ class UserConfig {
     static let shared: UserConfig = UserConfig()
     var sound: Bool
     var vibration: Bool
+    var userPause: Bool
     
     init() {
         self.sound = true
         self.vibration = true
+        self.userPause = false
     }
     
     func changeSound() {
@@ -22,5 +24,8 @@ class UserConfig {
     }
     func changeVibration() {
         vibration.toggle()
+    }
+    func changePause() {
+        userPause.toggle()
     }
 }

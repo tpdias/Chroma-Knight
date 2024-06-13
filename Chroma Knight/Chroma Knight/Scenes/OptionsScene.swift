@@ -15,7 +15,10 @@ class OptionsScene: SKScene {
     var soundToggle: SKSpriteNode
     var vibrationToggle: SKSpriteNode
     var soundLabel: SKLabelNode
+    var soundShadow: SKLabelNode
     var vibrationLabel: SKLabelNode
+    var vibrationShadow: SKLabelNode
+    var titleShadow: SKLabelNode
     
     override init(size: CGSize) {
         background = SKSpriteNode(imageNamed: "menuBackground")
@@ -23,47 +26,75 @@ class OptionsScene: SKScene {
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.zPosition = -1
         background.name = "background"
+        background.alpha = 0.7
         
         titleLabel = SKLabelNode(text: "Options")
         titleLabel.fontSize = 48
-        titleLabel.fontColor = .black
+        titleLabel.fontColor = .main
         titleLabel.fontName = "Retro Gaming"
         titleLabel.position = CGPoint(x: size.width/2, y: size.height/1.3)
         
+        titleShadow = SKLabelNode(text: "Options")
+        titleShadow.fontSize = 48
+        titleShadow.fontName = "Retro Gaming"
+        titleShadow.fontColor = .black
+        titleShadow.position = CGPoint(x: titleLabel.position.x + 3, y: titleLabel.position.y - 5)
+        
         backButton = SKSpriteNode(imageNamed: "backButton")
         backButton.scale(to: CGSize(width: 50, height: 50))
-        backButton.position = CGPoint(x: 100, y: size.height - 100)
+        backButton.position = CGPoint(x: 75, y: size.height - 50)
         backButton.zPosition = 0
         backButton.name = "backButton"
         
         soundLabel = SKLabelNode(text: "Sound")
-        soundLabel.fontColor = .black
+        soundLabel.fontColor = .main
         soundLabel.fontSize = 24
         soundLabel.fontName = "Retro Gaming"
         soundLabel.position = CGPoint(x: titleLabel.position.x, y: titleLabel.position.y - 100)
         soundLabel.zPosition = 0
         
+        soundShadow = SKLabelNode(text: "Sound")
+        soundShadow.fontSize = 24
+        soundShadow.fontName = "Retro Gaming"
+        soundShadow.fontColor = .black
+        soundShadow.position = CGPoint(x: soundLabel.position.x + 3, y: soundLabel.position.y - 2)
         
         soundToggle = SKSpriteNode(imageNamed: "toggleOn")
+        if(!UserConfig.shared.sound) {
+            soundToggle.texture = SKTexture(imageNamed: "toggleOff")
+        }
         soundToggle.scale(to: CGSize(width: 80, height: 40))
         soundToggle.position = CGPoint(x: soundLabel.position.x, y: soundLabel.position.y - 30)
         soundToggle.zPosition = 0
         soundToggle.name = "soundToggle"
         
         vibrationLabel = SKLabelNode(text: "Vibration")
-        vibrationLabel.fontColor = .black
+        vibrationLabel.fontColor = .main
         vibrationLabel.fontSize = 24
         vibrationLabel.zPosition = 0
         vibrationLabel.fontName = "Retro Gaming"
         vibrationLabel.position = CGPoint(x: soundToggle.position.x, y: soundToggle.position.y - 50)
         
+        
+        vibrationShadow = SKLabelNode(text: "Vibration")
+        vibrationShadow.fontSize = 24
+        vibrationShadow.fontName = "Retro Gaming"
+        vibrationShadow.fontColor = .black
+        vibrationShadow.position = CGPoint(x: vibrationLabel.position.x + 3, y: vibrationLabel.position.y - 2)
+        
         vibrationToggle = SKSpriteNode(imageNamed: "toggleOn")
+        if(!UserConfig.shared.vibration) {
+            vibrationToggle.texture = SKTexture(imageNamed: "toggleOff")
+        }
         vibrationToggle.scale(to: CGSize(width: 80, height: 40))
         vibrationToggle.position = CGPoint(x: vibrationLabel.position.x, y: vibrationLabel.position.y - 30)
         vibrationToggle.zPosition = 0
         vibrationToggle.name = "vibrationToggle"
         
         super.init(size: size)
+        addChild(titleShadow)
+        addChild(soundShadow)
+        addChild(vibrationShadow)
         addChild(background)
         addChild(backButton)
         addChild(vibrationLabel)

@@ -8,6 +8,7 @@
 import Foundation
 import SpriteKit
 
+let appFont = "Retro Gaming"
 let waitForAnimation = SKAction.wait(forDuration: 0.2)
 let fadeOut = SKAction.fadeOut(withDuration: 0.4)
 
