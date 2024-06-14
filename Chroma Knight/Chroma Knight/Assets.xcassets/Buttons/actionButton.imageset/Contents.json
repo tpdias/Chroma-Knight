@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "optionsButton.png",
+      "filename" : "ActionButton.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

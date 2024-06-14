@@ -15,6 +15,9 @@ let fadeOut = SKAction.fadeOut(withDuration: 0.4)
 func animateButton(button: SKSpriteNode) {
     button.texture = SKTexture(imageNamed: String((button.name ?? "") + "Pressed"))
 }
+func deactivateButton(button: SKSpriteNode) {
+    button.texture = SKTexture(imageNamed: button.name ?? "")
+}
 
 func animateToggle(toggle: SKSpriteNode, isOn: Bool) {
     toggle.texture = SKTexture(imageNamed: "toggleTransition")
