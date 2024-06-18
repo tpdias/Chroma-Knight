@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "gameBackgroundController.png",
+      "filename" : "controllerBackground.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

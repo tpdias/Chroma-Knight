@@ -12,19 +12,21 @@ class LevelOneScene: SKScene {
     
     var activeTouches: [UITouch: SKSpriteNode] = [:] // Dictionary to track touches and their corresponding buttons
     
+    //Player
+    var player: Player
     // Pause
     var pauseNode: PauseNode
     
     override init(size: CGSize) {
         controllerBackground = SKSpriteNode(imageNamed: "controllerBackground")
         controllerBackground.scale(to: CGSize(width: size.width, height: size.height / 3))
-        controllerBackground.position = CGPoint(x: size.width / 2, y: size.height / 2 - size.height / 3)
+        controllerBackground.position = CGPoint(x: size.width / 2, y: size.height / 2 - size.height / 2.7)
         controllerBackground.zPosition = -1
         
         background = SKSpriteNode(imageNamed: "levelOneBackground")
         background.scale(to: CGSize(width: size.width, height: size.height / 1.2))
         background.position = CGPoint(x: size.width / 2, y: size.height / 2 + size.height / 5)
-        background.zPosition = -1
+        background.zPosition = -2
         
         pauseNode = PauseNode(size: size)
         
@@ -49,9 +51,12 @@ class LevelOneScene: SKScene {
         actionButton.zPosition = 1
         actionButton.name = "actionButton"
         
+        
+        player = Player(size: size)
         super.init(size: size)
         backgroundColor = .black
 
+        addChild(player.node)
         addChild(leftButton)
         addChild(rightButton)
         addChild(actionButton)
@@ -66,13 +71,18 @@ class LevelOneScene: SKScene {
     
     override func didMove(to view: SKView) {}
     
-    override func update(_ currentTime: TimeInterval) {}
+    override func update(_ currentTime: TimeInterval) {
+        calculatePlayerMoviment()
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
             if let name = touchedNode.name {
+                if(name.contains("Button") || name.contains("Toggle")) {
+                    vibrate(with: .light)
+                }
                 if let scene = self.view?.scene {
                     pauseNode.checkPauseNodePressed(scene: scene, touchedNode: touchedNode)
                 }
@@ -152,18 +162,30 @@ class LevelOneScene: SKScene {
     }
     
     func leftButtonPressed(touch: UITouch) {
+        vibrate(with: .light)
         activeTouches[touch] = leftButton
         animateButton(button: leftButton)
     }
     
     func rightButtonPressed(touch: UITouch) {
+        vibrate(with: .light)
         activeTouches[touch] = rightButton
         animateButton(button: rightButton)
     }
     
     func actionButtonPressed(touch: UITouch) {
+        vibrate(with: .light)
         activeTouches[touch] = actionButton
         animateButton(button: actionButton)
+    }
+    
+    func calculatePlayerMoviment() {
+        if(activeTouches.values.contains(leftButton)) {
+            player.movePlayer(distance: -player.movimentSpeed)
+        }
+        if(activeTouches.values.contains(rightButton)) {
+            player.movePlayer(distance: player.movimentSpeed)
+        }
     }
     
 

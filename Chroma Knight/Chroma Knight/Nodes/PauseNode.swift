@@ -25,19 +25,19 @@ class PauseNode: SKNode {
         
         resumeButton = SKSpriteNode(imageNamed: "resumeButton")
         resumeButton.scale(to: CGSize(width: 120, height: 120))
-        resumeButton.position = CGPoint(x: size.width/2, y: size.height/2)
+        resumeButton.position = CGPoint(x: size.width/2, y: size.height/2 + 48)
         resumeButton.zPosition = 1
         resumeButton.name = "resumeButton"
         
         homeButton = SKSpriteNode(imageNamed: "homeButton")
         homeButton.scale(to: CGSize(width: 96, height: 96))
-        homeButton.position = CGPoint(x: size.width / 2 - 200, y: size.height/2 - 48)
+        homeButton.position = CGPoint(x: size.width / 2 - 200, y: size.height/2)
         homeButton.zPosition = 1
         homeButton.name = "homeButton"
         
         configButton = SKSpriteNode(imageNamed: "optionsButton")
         configButton.scale(to: CGSize(width: 96, height: 96))
-        configButton.position = CGPoint(x: size.width/2 + 200, y: size.height/2 - 48)
+        configButton.position = CGPoint(x: size.width/2 + 200, y: size.height/2)
         configButton.zPosition = 1
         configButton.name = "optionsButton"
         
@@ -73,8 +73,8 @@ class PauseNode: SKNode {
             UserConfig.shared.changeVibration()
             animateToggle(toggle: configNode.vibrationToggle, isOn: UserConfig.shared.vibration)
         case "soundToggle":
-            UserConfig.shared.changeSound()
-            animateToggle(toggle: configNode.soundToggle, isOn: UserConfig.shared.sound)
+            SoundManager.shared.changeSound()
+            animateToggle(toggle: configNode.soundToggle, isOn: SoundManager.shared.soundEnabled)
         default:
             break
         }

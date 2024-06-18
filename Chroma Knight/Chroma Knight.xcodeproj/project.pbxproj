@@ -20,6 +20,10 @@
 		A74ED3412C11E04E00A83E2A /* UserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED3402C11E04E00A83E2A /* UserConfig.swift */; };
 		A74ED3432C1645A900A83E2A /* LevelOneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED3422C1645A900A83E2A /* LevelOneScene.swift */; };
 		A74ED3462C16485200A83E2A /* PauseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED3452C16485200A83E2A /* PauseNode.swift */; };
+		A77337272C21BE7E00B9F55F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77337262C21BE7E00B9F55F /* Player.swift */; };
+		A77A8EF72C20E00B002C8E5B /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A77A8EF62C20E00A002C8E5B /* backgroundMusic.mp3 */; };
+		A77A8EF92C20E49D002C8E5B /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A8EF82C20E49D002C8E5B /* SoundManager.swift */; };
+		A77A8EFB2C20E4BC002C8E5B /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A8EFA2C20E4BC002C8E5B /* Haptics.swift */; };
 		A7EABB252C164F61005938FE /* ConfigNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EABB242C164F61005938FE /* ConfigNode.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +43,10 @@
 		A74ED3402C11E04E00A83E2A /* UserConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfig.swift; sourceTree = "<group>"; };
 		A74ED3422C1645A900A83E2A /* LevelOneScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOneScene.swift; sourceTree = "<group>"; };
 		A74ED3452C16485200A83E2A /* PauseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseNode.swift; sourceTree = "<group>"; };
+		A77337262C21BE7E00B9F55F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		A77A8EF62C20E00A002C8E5B /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		A77A8EF82C20E49D002C8E5B /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		A77A8EFA2C20E4BC002C8E5B /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		A7EABB242C164F61005938FE /* ConfigNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,11 +86,13 @@
 				A74ED3352C11DD9C00A83E2A /* Scenes */,
 				A74ED31E2C11DD2800A83E2A /* AppDelegate.swift */,
 				A74ED3262C11DD2800A83E2A /* GameViewController.swift */,
+				A77337252C21BE7300B9F55F /* Model */,
 				A74ED3402C11E04E00A83E2A /* UserConfig.swift */,
 				A74ED3282C11DD2800A83E2A /* Main.storyboard */,
 				A74ED32B2C11DD2A00A83E2A /* Assets.xcassets */,
 				A74ED32D2C11DD2A00A83E2A /* LaunchScreen.storyboard */,
 				A74ED33E2C11DF6E00A83E2A /* Retro Gaming.ttf */,
+				A77A8EF62C20E00A002C8E5B /* backgroundMusic.mp3 */,
 			);
 			path = "Chroma Knight";
 			sourceTree = "<group>";
@@ -102,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				A74ED3372C11DDBD00A83E2A /* Utils.swift */,
+				A77A8EF82C20E49D002C8E5B /* SoundManager.swift */,
+				A77A8EFA2C20E4BC002C8E5B /* Haptics.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -113,6 +125,14 @@
 				A7EABB242C164F61005938FE /* ConfigNode.swift */,
 			);
 			path = Nodes;
+			sourceTree = "<group>";
+		};
+		A77337252C21BE7300B9F55F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A77337262C21BE7E00B9F55F /* Player.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +195,7 @@
 			files = (
 				A74ED32A2C11DD2800A83E2A /* Base in Resources */,
 				A74ED32C2C11DD2A00A83E2A /* Assets.xcassets in Resources */,
+				A77A8EF72C20E00B002C8E5B /* backgroundMusic.mp3 in Resources */,
 				A74ED32F2C11DD2A00A83E2A /* Base in Resources */,
 				A74ED33F2C11DF6E00A83E2A /* Retro Gaming.ttf in Resources */,
 			);
@@ -187,15 +208,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A77A8EFB2C20E4BC002C8E5B /* Haptics.swift in Sources */,
 				A74ED3252C11DD2800A83E2A /* GameScene.swift in Sources */,
 				A74ED3272C11DD2800A83E2A /* GameViewController.swift in Sources */,
 				A74ED33A2C11DDEB00A83E2A /* MenuScene.swift in Sources */,
 				A74ED31F2C11DD2800A83E2A /* AppDelegate.swift in Sources */,
+				A77337272C21BE7E00B9F55F /* Player.swift in Sources */,
 				A74ED3382C11DDBD00A83E2A /* Utils.swift in Sources */,
 				A74ED3462C16485200A83E2A /* PauseNode.swift in Sources */,
 				A74ED33C2C11DE0500A83E2A /* OptionsScene.swift in Sources */,
 				A7EABB252C164F61005938FE /* ConfigNode.swift in Sources */,
 				A74ED3432C1645A900A83E2A /* LevelOneScene.swift in Sources */,
+				A77A8EF92C20E49D002C8E5B /* SoundManager.swift in Sources */,
 				A74ED3412C11E04E00A83E2A /* UserConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

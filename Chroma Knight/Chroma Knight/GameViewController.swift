@@ -10,18 +10,17 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
         let menuScene = MenuScene(size: view.bounds.size)
         menuScene.scaleMode = .aspectFill
         let skView = self.view as! SKView
         
         skView.presentScene(menuScene)
     }
-
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
@@ -29,8 +28,11 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-
+    
     override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    override var prefersHomeIndicatorAutoHidden: Bool {
         return true
     }
 }

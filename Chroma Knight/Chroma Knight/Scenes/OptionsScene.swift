@@ -60,7 +60,7 @@ class OptionsScene: SKScene {
         soundShadow.position = CGPoint(x: soundLabel.position.x + 3, y: soundLabel.position.y - 2)
         
         soundToggle = SKSpriteNode(imageNamed: "toggleOn")
-        if(!UserConfig.shared.sound) {
+        if(!SoundManager.shared.soundEnabled) {
             soundToggle.texture = SKTexture(imageNamed: "toggleOff")
         }
         soundToggle.scale(to: CGSize(width: 80, height: 40))
@@ -117,6 +117,9 @@ class OptionsScene: SKScene {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
             if let name = touchedNode.name {
+                if(name.contains("Toggle") || name.contains("Button")) {
+                    vibrate(with: .light)
+                }
                 switch name {
                 case "backButton":
                     let menuScene = MenuScene(size: self.size)
@@ -124,8 +127,8 @@ class OptionsScene: SKScene {
                     animateButton(button: backButton)
                     transitionToNextScene(scene: menuScene)
                 case "soundToggle":
-                    UserConfig.shared.changeSound()
-                    animateToggle(toggle: soundToggle, isOn: UserConfig.shared.sound)
+                    SoundManager.shared.changeSound()
+                    animateToggle(toggle: soundToggle, isOn: SoundManager.shared.soundEnabled)
                     break
                 case "vibrationToggle":
                     UserConfig.shared.changeVibration()

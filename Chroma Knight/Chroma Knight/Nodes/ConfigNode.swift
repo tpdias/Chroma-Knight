@@ -53,7 +53,7 @@ class ConfigNode: SKNode {
         soundLabel.position = CGPoint(x: size.width/1.5, y: size.height/2)
         soundLabel.zPosition = 1
     
-        if(UserConfig.shared.sound) {
+        if(SoundManager.shared.soundEnabled) {
             soundToggle = SKSpriteNode(imageNamed: "toggleOn")
         } else {
             soundToggle = SKSpriteNode(imageNamed: "toggleOff")

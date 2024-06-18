@@ -66,6 +66,8 @@ class MenuScene: SKScene {
         soundButton.name = "soundButton"
         
         super.init(size: size)
+        SoundManager.shared.stopSounds()
+        SoundManager.shared.playSoundtrack()
         addChild(soundButton)
         addChild(background)
         addChild(playButton)
@@ -88,6 +90,10 @@ class MenuScene: SKScene {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
             if let name = touchedNode.name {
+                if(name.contains("Button")) {
+                    vibrate(with: .light)
+                }
+                
                 switch name {
                 case "playButton":
                     let levelOneScene = LevelOneScene(size: self.size)
@@ -101,8 +107,9 @@ class MenuScene: SKScene {
                     animateButton(button: optionsButton)
                     transitionToNextScene(scene: optionsScene)
                 case "soundButton":
-                    UserConfig.shared.changeSound()
-                    animateSoundButton(button: soundButton, isOn: UserConfig.shared.sound)
+                    SoundManager.shared.changeSound()
+                    animateSoundButton(button: soundButton, isOn: SoundManager.shared.soundEnabled)
+                    SoundManager.shared.playSoundtrack()
                 default:
                     break
                 }
