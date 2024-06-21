@@ -60,6 +60,9 @@ class MenuScene: SKScene {
         optionsButton.name = "optionsButton"
         
         soundButton = SKSpriteNode(imageNamed: "soundButton")
+        if(!SoundManager.shared.soundEnabled) {
+            soundButton.texture = SKTexture(imageNamed: "soundButtonOff")
+        }
         soundButton.scale(to: CGSize(width: 50, height: 50))
         soundButton.position = CGPoint(x: 75, y: size.height - 50)
         soundButton.zPosition = 0

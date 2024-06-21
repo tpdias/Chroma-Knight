@@ -1,7 +1,7 @@
 import Foundation
 import SpriteKit
 
-class LevelOneScene: SKScene {
+class LevelOneScene: SKScene, SKPhysicsContactDelegate {
     // Backgrounds
     var controllerBackground: SKSpriteNode
     var background: SKSpriteNode
@@ -14,6 +14,10 @@ class LevelOneScene: SKScene {
     
     //Player
     var player: Player
+    
+    //ground
+    var ground: SKSpriteNode
+    
     // Pause
     var pauseNode: PauseNode
     
@@ -29,6 +33,7 @@ class LevelOneScene: SKScene {
         background.zPosition = -2
         
         pauseNode = PauseNode(size: size)
+        pauseNode.zPosition = 2
         
         let buttonsX = size.width / 5
         let buttonsSize: CGFloat = 100
@@ -52,10 +57,22 @@ class LevelOneScene: SKScene {
         actionButton.name = "actionButton"
         
         
-        player = Player(size: size)
+        player = Player(size: size, sword: Sword(damage: 1, size: size, type: .basic))
+        
+        ground = SKSpriteNode(color: .clear, size: CGSize(width: size.width, height: 10))
+        ground.position = CGPoint(x: size.width/2, y: player.node.position.y - player.node.size.height/1.8)
+        ground.physicsBody = SKPhysicsBody(rectangleOf: ground.size)
+        ground.physicsBody?.isDynamic = false
+        ground.physicsBody?.categoryBitMask = PhysicsCategory.ground
+        ground.physicsBody?.collisionBitMask = PhysicsCategory.player
+        ground.physicsBody?.contactTestBitMask = PhysicsCategory.player
         super.init(size: size)
-        backgroundColor = .black
 
+        physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
+        physicsWorld.contactDelegate = self
+        
+        backgroundColor = .black
+        addChild(ground)
         addChild(player.node)
         addChild(leftButton)
         addChild(rightButton)
@@ -63,6 +80,7 @@ class LevelOneScene: SKScene {
         addChild(pauseNode)
         addChild(controllerBackground)
         addChild(background)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,6 +88,16 @@ class LevelOneScene: SKScene {
     }
     
     override func didMove(to view: SKView) {}
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let contactA = contact.bodyA.categoryBitMask
+        let contactB = contact.bodyB.categoryBitMask
+        if(contactA == PhysicsCategory.player && contactB == PhysicsCategory.ground) || (contactA == PhysicsCategory.ground && contactB == PhysicsCategory.player) {
+            if player.isJumping {
+                player.isJumping = false
+            }
+        }
+    }
     
     override func update(_ currentTime: TimeInterval) {
         calculatePlayerMoviment()
@@ -117,8 +145,8 @@ class LevelOneScene: SKScene {
                                 leftButtonPressed(touch: touch)
                             case "rightButton":
                                 rightButtonPressed(touch: touch)
-                            case "actionButton":
-                                actionButtonPressed(touch: touch)
+//                            case "actionButton":
+//                                actionButtonPressed(touch: touch)
                             default:
                                 break
                             }
@@ -132,8 +160,8 @@ class LevelOneScene: SKScene {
                             leftButtonPressed(touch: touch)
                         case "rightButton":
                             rightButtonPressed(touch: touch)
-                        case "actionButton":
-                            actionButtonPressed(touch: touch)
+//                        case "actionButton":
+//                            actionButtonPressed(touch: touch)
                         default:
                             break
                         }
@@ -175,18 +203,28 @@ class LevelOneScene: SKScene {
     
     func actionButtonPressed(touch: UITouch) {
         vibrate(with: .light)
-        activeTouches[touch] = actionButton
+     //   activeTouches[touch] = actionButton
         animateButton(button: actionButton)
+        self.run(waitForAnimation) {
+            deactivateButton(button: self.actionButton)
+        }
+        player.playerJump()
     }
     
     func calculatePlayerMoviment() {
         if(activeTouches.values.contains(leftButton)) {
-            player.movePlayer(distance: -player.movimentSpeed)
+            player.movePlayer(distance: -player.movementSpeed)
         }
         if(activeTouches.values.contains(rightButton)) {
-            player.movePlayer(distance: player.movimentSpeed)
+            player.movePlayer(distance: player.movementSpeed)
         }
     }
     
 
+}
+
+
+struct PhysicsCategory  {
+    static let player: UInt32 = 0x1 << 0
+    static let ground: UInt32 = 0x1 << 1
 }

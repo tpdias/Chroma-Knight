@@ -20,6 +20,7 @@
 		A74ED3412C11E04E00A83E2A /* UserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED3402C11E04E00A83E2A /* UserConfig.swift */; };
 		A74ED3432C1645A900A83E2A /* LevelOneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED3422C1645A900A83E2A /* LevelOneScene.swift */; };
 		A74ED3462C16485200A83E2A /* PauseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74ED3452C16485200A83E2A /* PauseNode.swift */; };
+		A76573B42C25B2CE003EDB40 /* Sword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76573B32C25B2CE003EDB40 /* Sword.swift */; };
 		A77337272C21BE7E00B9F55F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77337262C21BE7E00B9F55F /* Player.swift */; };
 		A77A8EF72C20E00B002C8E5B /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A77A8EF62C20E00A002C8E5B /* backgroundMusic.mp3 */; };
 		A77A8EF92C20E49D002C8E5B /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A8EF82C20E49D002C8E5B /* SoundManager.swift */; };
@@ -43,6 +44,7 @@
 		A74ED3402C11E04E00A83E2A /* UserConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfig.swift; sourceTree = "<group>"; };
 		A74ED3422C1645A900A83E2A /* LevelOneScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOneScene.swift; sourceTree = "<group>"; };
 		A74ED3452C16485200A83E2A /* PauseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseNode.swift; sourceTree = "<group>"; };
+		A76573B32C25B2CE003EDB40 /* Sword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sword.swift; sourceTree = "<group>"; };
 		A77337262C21BE7E00B9F55F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A77A8EF62C20E00A002C8E5B /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		A77A8EF82C20E49D002C8E5B /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				A77337262C21BE7E00B9F55F /* Player.swift */,
+				A76573B32C25B2CE003EDB40 /* Sword.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				A74ED31F2C11DD2800A83E2A /* AppDelegate.swift in Sources */,
 				A77337272C21BE7E00B9F55F /* Player.swift in Sources */,
 				A74ED3382C11DDBD00A83E2A /* Utils.swift in Sources */,
+				A76573B42C25B2CE003EDB40 /* Sword.swift in Sources */,
 				A74ED3462C16485200A83E2A /* PauseNode.swift in Sources */,
 				A74ED33C2C11DE0500A83E2A /* OptionsScene.swift in Sources */,
 				A7EABB252C164F61005938FE /* ConfigNode.swift in Sources */,
