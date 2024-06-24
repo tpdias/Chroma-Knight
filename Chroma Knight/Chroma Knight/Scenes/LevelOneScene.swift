@@ -202,7 +202,6 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func actionButtonPressed(touch: UITouch) {
-        vibrate(with: .light)
      //   activeTouches[touch] = actionButton
         animateButton(button: actionButton)
         self.run(waitForAnimation) {

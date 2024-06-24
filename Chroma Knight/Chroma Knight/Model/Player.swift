@@ -35,7 +35,6 @@ class Player {
         node.physicsBody?.contactTestBitMask = PhysicsCategory.ground
         
         self.sword = sword
-        self.sword.node.position = CGPoint(x: node.size.width/2, y: -node.size.height/4)
         self.sword.node.zPosition = 2
         self.node.addChild(self.sword.node)
     }
