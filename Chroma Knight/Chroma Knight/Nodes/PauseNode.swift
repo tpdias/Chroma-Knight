@@ -13,6 +13,7 @@ class PauseNode: SKNode {
     var resumeButton: SKSpriteNode
     var homeButton: SKSpriteNode
     var configButton: SKSpriteNode
+    var blackBackground: SKSpriteNode
     var configNode: ConfigNode
     
     init(size: CGSize) {
@@ -42,7 +43,13 @@ class PauseNode: SKNode {
         configButton.name = "optionsButton"
         
         configNode = ConfigNode(size: size)
-        configNode.zPosition = 2
+        configNode.zPosition = 3
+        
+        blackBackground = SKSpriteNode(color: .black, size: size)
+        blackBackground.position = CGPoint(x: size.width/2, y: size.height/2)
+        blackBackground.zPosition = 0
+        blackBackground.alpha = 0.3
+        
         super.init()
         self.addChild(pauseButton)
         
@@ -94,7 +101,9 @@ class PauseNode: SKNode {
                 self.addChild(self.resumeButton)
                 self.addChild(self.configButton)
                 self.addChild(self.homeButton)
+                self.addChild(self.blackBackground)
             } else {
+                self.blackBackground.removeFromParent()
                 self.resumeButton.removeFromParent()
                 self.configButton.removeFromParent()
                 self.homeButton.removeFromParent()

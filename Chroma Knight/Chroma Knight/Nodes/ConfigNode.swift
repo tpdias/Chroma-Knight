@@ -23,17 +23,17 @@ class ConfigNode: SKNode {
     
     init(size: CGSize) {
         optionsLabel = SKLabelNode(text: "Options")
-        optionsLabel.fontColor = .black
+        optionsLabel.fontColor = .main
         optionsLabel.fontSize = 32
         optionsLabel.fontName = appFont
         optionsLabel.position = CGPoint(x: size.width/2, y: size.height/1.4)
         optionsLabel.zPosition = 1
         
         vibrationLabel = SKLabelNode(text: "Haptics:")
-        vibrationLabel.fontColor = .black
+        vibrationLabel.fontColor = .main
         vibrationLabel.fontSize = 16
         vibrationLabel.fontName = appFont
-        vibrationLabel.position = CGPoint(x: size.width/3, y: size.height/2)
+        vibrationLabel.position = CGPoint(x: size.width/2 - 100, y: size.height/2)
         vibrationLabel.zPosition = 1
         
         if(UserConfig.shared.vibration) {
@@ -47,10 +47,10 @@ class ConfigNode: SKNode {
         vibrationToggle.name = "vibrationToggle"
         
         soundLabel = SKLabelNode(text: "Sound:")
-        soundLabel.fontColor = .black
+        soundLabel.fontColor = .main
         soundLabel.fontSize = 16
         soundLabel.fontName = appFont
-        soundLabel.position = CGPoint(x: size.width/1.5, y: size.height/2)
+        soundLabel.position = CGPoint(x: size.width/2 + 100, y: size.height/2)
         soundLabel.zPosition = 1
     
         if(SoundManager.shared.soundEnabled) {
@@ -64,17 +64,23 @@ class ConfigNode: SKNode {
         soundToggle.name = "soundToggle"
         
         optionsBackground = SKSpriteNode(imageNamed: "optionsBackground")
-        optionsBackground.scale(to: size)
+        optionsBackground.scale(to: CGSize(width: 1024/2.5, height: 1024/2.5))
         optionsBackground.zPosition = 0
         optionsBackground.position = CGPoint(x: size.width/2, y: size.height/2)
         
+        let blackBackground = SKSpriteNode(color: .black, size: size)
+        blackBackground.position = CGPoint(x: size.width/2, y: size.height/2)
+        blackBackground.alpha = 0.5
+        blackBackground.zPosition = -1
+        
         closeButton = SKSpriteNode(imageNamed: "closeButton")
         closeButton.scale(to: CGSize(width: 48, height: 48))
-        closeButton.position = CGPoint(x: size.width - 80, y: size.height - 80)
+        closeButton.position = CGPoint(x: size.width/2 + 130, y: size.height - 80)
         closeButton.zPosition = 1
         closeButton.name = "closeButton"
         
         super.init()
+        addChild(blackBackground)
         addChild(vibrationLabel)
         addChild(soundLabel)
         addChild(optionsLabel)

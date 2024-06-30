@@ -33,7 +33,7 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate {
         background.zPosition = -2
         
         pauseNode = PauseNode(size: size)
-        pauseNode.zPosition = 2
+        pauseNode.zPosition = 3
         
         let buttonsX = size.width / 5
         let buttonsSize: CGFloat = 100
@@ -94,7 +94,14 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate {
         let contactB = contact.bodyB.categoryBitMask
         if(contactA == PhysicsCategory.player && contactB == PhysicsCategory.ground) || (contactA == PhysicsCategory.ground && contactB == PhysicsCategory.player) {
             if player.isJumping {
-                player.isJumping = false
+                actionButton.name = "actionButton"
+                actionButton.texture = SKTexture(imageNamed: "actionButton")
+                player.collideWithFloor()
+                if(activeTouches.values.contains(leftButton) || activeTouches.values.contains(rightButton)) {
+                    player.animateWalk()
+                } else {
+                    player.animatePlayer()
+                }
             }
         }
     }
@@ -120,7 +127,9 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate {
                 case "rightButton":
                     rightButtonPressed(touch: touch)
                 case "actionButton":
-                    actionButtonPressed(touch: touch)
+                    actionButtonPressed()
+                case "jumpAttackButton":
+                    jumpAttackButtonPressed()
                 default:
                     break
                 }
@@ -176,6 +185,7 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate {
             if let button = activeTouches[touch] {
                 deactivateButton(button: button)
                 activeTouches[touch] = nil
+                player.animatePlayer()
             }
         }
     }
@@ -185,6 +195,7 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate {
             if let button = activeTouches[touch] {
                 deactivateButton(button: button)
                 activeTouches[touch] = nil
+                player.animatePlayer()
             }
         }
     }
@@ -193,29 +204,37 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate {
         vibrate(with: .light)
         activeTouches[touch] = leftButton
         animateButton(button: leftButton)
+        player.animateWalk()
     }
     
     func rightButtonPressed(touch: UITouch) {
         vibrate(with: .light)
         activeTouches[touch] = rightButton
         animateButton(button: rightButton)
+        player.animateWalk()
     }
     
-    func actionButtonPressed(touch: UITouch) {
-     //   activeTouches[touch] = actionButton
+    func actionButtonPressed() {
         animateButton(button: actionButton)
         self.run(waitForAnimation) {
             deactivateButton(button: self.actionButton)
         }
         player.playerJump()
+        actionButton.name = "jumpAttackButton"
+        actionButton.texture = SKTexture(imageNamed: "jumpAttackButton")
     }
-    
+    func jumpAttackButtonPressed() {
+        player.jumpAttack()
+        actionButton.texture = SKTexture(imageNamed: "jumpAttackButtonPressed")
+    }
+   
     func calculatePlayerMoviment() {
         if(activeTouches.values.contains(leftButton)) {
             player.movePlayer(distance: -player.movementSpeed)
         }
         if(activeTouches.values.contains(rightButton)) {
             player.movePlayer(distance: player.movementSpeed)
+            
         }
     }
     
