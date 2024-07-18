@@ -64,6 +64,7 @@ class Sword {
         node.run(SKAction.repeatForever(sequence))
     }
     func jumpAttack() {
+        node.zRotation = 0
         let rotationAction = SKAction.rotate(byAngle: -(.pi/2), duration: 0.2)
         node.run(rotationAction)
     }
