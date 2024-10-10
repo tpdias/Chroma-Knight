@@ -19,20 +19,31 @@ class MenuScene: SKScene {
     var optionsButton: SKSpriteNode
     var soundButton: SKSpriteNode
     
+    var highscoreLabel: SKLabelNode
+    var highscore = UserDefaults.standard.integer(forKey: "highscore")
+    var lastScoreLabel: SKLabelNode
+    var lastScore = UserDefaults.standard.integer(forKey: "lastscore")
+    
     override init(size: CGSize) {
-        
+    
+       print(size)
+        var realSize = size
+        if(realSize.width/realSize.height <= 1) {
+            realSize = CGSize(width: 852, height: 393)
+        }
         background = SKSpriteNode(imageNamed: "menuBackground")
-        background.scale(to: size)
-        background.position = CGPoint(x: size.width/2, y: size.height/2)
+        background.scale(to: realSize)
+        background.position = CGPoint(x: realSize.width/2, y: realSize.height/2)
         background.zPosition = -1
         background.alpha = 0.7
         background.name = "background"
+        print(realSize)
         
         titleLabel = SKLabelNode(text: "Chroma Knight")
         titleLabel.fontSize = 48
         titleLabel.fontName = "Retro Gaming"
         titleLabel.fontColor = .main
-        titleLabel.position = CGPoint(x: size.width/2, y: size.height/1.5)
+        titleLabel.position = CGPoint(x: realSize.width/2, y: realSize.height/1.5)
         
         titleShadow = SKLabelNode(text: "Chroma Knight")
         titleShadow.fontSize = 48
@@ -42,7 +53,7 @@ class MenuScene: SKScene {
                
         playButton = SKSpriteNode(imageNamed: "playButton")
         playButton.scale(to: CGSize(width: 200, height: 100))
-        playButton.position = CGPoint(x: size.width/2, y: size.height/2.5)
+        playButton.position = CGPoint(x: realSize.width/2, y: realSize.height/2.5)
         playButton.zPosition = 0
         playButton.name = "playButton"
                 
@@ -55,7 +66,7 @@ class MenuScene: SKScene {
         
         optionsButton = SKSpriteNode(imageNamed: "optionsButton")
         optionsButton.scale(to: CGSize(width: 50, height: 50))
-        optionsButton.position = CGPoint(x: size.width - 75, y: size.height - 50)
+        optionsButton.position = CGPoint(x: realSize.width - 75, y: realSize.height - 50)
         optionsButton.zPosition = 0
         optionsButton.name = "optionsButton"
         
@@ -64,11 +75,26 @@ class MenuScene: SKScene {
             soundButton.texture = SKTexture(imageNamed: "soundButtonOff")
         }
         soundButton.scale(to: CGSize(width: 50, height: 50))
-        soundButton.position = CGPoint(x: 75, y: size.height - 50)
+        soundButton.position = CGPoint(x: 75, y: realSize.height - 50)
         soundButton.zPosition = 0
         soundButton.name = "soundButton"
         
-        super.init(size: size)
+        highscoreLabel = SKLabelNode(text: "Highscore: \(highscore)")
+        highscoreLabel.fontColor = .white
+        highscoreLabel.fontName = appFont
+        highscoreLabel.fontSize = 24
+        highscoreLabel.position = CGPoint(x: 50, y: 25)
+        highscoreLabel.zPosition = 1
+        highscoreLabel.horizontalAlignmentMode = .left
+        
+        lastScoreLabel = SKLabelNode(text: "Last Score: \(lastScore)")
+        lastScoreLabel.fontColor = .white
+        lastScoreLabel.fontName = appFont
+        lastScoreLabel.fontSize = 24
+        lastScoreLabel.position = CGPoint(x: highscoreLabel.position.x, y: highscoreLabel.position.y + 30)
+        lastScoreLabel.zPosition = 1
+        lastScoreLabel.horizontalAlignmentMode = .left
+        super.init(size: realSize)
         SoundManager.shared.stopSounds()
         SoundManager.shared.playSoundtrack()
         addChild(soundButton)
@@ -78,8 +104,11 @@ class MenuScene: SKScene {
         addChild(titleShadow)
         addChild(titleLabel)
         addChild(playLabel)
+        addChild(highscoreLabel)
+        addChild(lastScoreLabel)
     }
     
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

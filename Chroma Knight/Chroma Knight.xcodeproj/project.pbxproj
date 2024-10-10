@@ -25,10 +25,17 @@
 		A77A8EF72C20E00B002C8E5B /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A77A8EF62C20E00A002C8E5B /* backgroundMusic.mp3 */; };
 		A77A8EF92C20E49D002C8E5B /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A8EF82C20E49D002C8E5B /* SoundManager.swift */; };
 		A77A8EFB2C20E4BC002C8E5B /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A8EFA2C20E4BC002C8E5B /* Haptics.swift */; };
+		A786BB582C81260A00DB3494 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A786BB572C81260A00DB3494 /* GoogleMobileAds */; };
 		A7C62A982C4933B1000D5669 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C62A972C4933B1000D5669 /* Enemy.swift */; };
 		A7C62A9A2C493452000D5669 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C62A992C493452000D5669 /* Slime.swift */; };
 		A7C62A9C2C493698000D5669 /* Ghost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C62A9B2C493698000D5669 /* Ghost.swift */; };
+		A7E5C0AC2C5432EE00E661B2 /* SlimeKing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E5C0AB2C5432EE00E661B2 /* SlimeKing.swift */; };
+		A7E5C0AF2C54346C00E661B2 /* LevelOneCollisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E5C0AE2C54346C00E661B2 /* LevelOneCollisions.swift */; };
+		A7E5C0B12C5434FE00E661B2 /* LevelOneTouches.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E5C0B02C5434FE00E661B2 /* LevelOneTouches.swift */; };
 		A7EABB252C164F61005938FE /* ConfigNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EABB242C164F61005938FE /* ConfigNode.swift */; };
+		A7FAFDBA2C5AF34C0083AABD /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FAFDB92C5AF34C0083AABD /* Merchant.swift */; };
+		A7FF39132C570D43004821CD /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FF39122C570D43004821CD /* Fruit.swift */; };
+		A7FF39152C5724AE004821CD /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FF39142C5724AE004821CD /* Coin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +62,13 @@
 		A7C62A972C4933B1000D5669 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		A7C62A992C493452000D5669 /* Slime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slime.swift; sourceTree = "<group>"; };
 		A7C62A9B2C493698000D5669 /* Ghost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghost.swift; sourceTree = "<group>"; };
+		A7E5C0AB2C5432EE00E661B2 /* SlimeKing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlimeKing.swift; path = ../Enemy/SlimeKing.swift; sourceTree = "<group>"; };
+		A7E5C0AE2C54346C00E661B2 /* LevelOneCollisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOneCollisions.swift; sourceTree = "<group>"; };
+		A7E5C0B02C5434FE00E661B2 /* LevelOneTouches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOneTouches.swift; sourceTree = "<group>"; };
 		A7EABB242C164F61005938FE /* ConfigNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigNode.swift; sourceTree = "<group>"; };
+		A7FAFDB92C5AF34C0083AABD /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
+		A7FF39122C570D43004821CD /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		A7FF39142C5724AE004821CD /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A786BB582C81260A00DB3494 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +124,7 @@
 			children = (
 				A74ED3392C11DDEB00A83E2A /* MenuScene.swift */,
 				A74ED3242C11DD2800A83E2A /* GameScene.swift */,
-				A74ED3422C1645A900A83E2A /* LevelOneScene.swift */,
+				A7E5C0AD2C54345F00E661B2 /* LevelOne */,
 				A74ED33B2C11DE0500A83E2A /* OptionsScene.swift */,
 			);
 			path = Scenes;
@@ -139,12 +153,50 @@
 			isa = PBXGroup;
 			children = (
 				A77337262C21BE7E00B9F55F /* Player.swift */,
+				A7FAFDB92C5AF34C0083AABD /* Merchant.swift */,
+				A7FF39112C570D38004821CD /* Loot */,
+				A7E5C0AA2C5432D500E661B2 /* Enemy */,
+				A76573B32C25B2CE003EDB40 /* Sword.swift */,
+				A786BB602C8659C100DB3494 /* Boss */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A786BB602C8659C100DB3494 /* Boss */ = {
+			isa = PBXGroup;
+			children = (
+				A7E5C0AB2C5432EE00E661B2 /* SlimeKing.swift */,
+			);
+			path = Boss;
+			sourceTree = "<group>";
+		};
+		A7E5C0AA2C5432D500E661B2 /* Enemy */ = {
+			isa = PBXGroup;
+			children = (
 				A7C62A972C4933B1000D5669 /* Enemy.swift */,
 				A7C62A992C493452000D5669 /* Slime.swift */,
 				A7C62A9B2C493698000D5669 /* Ghost.swift */,
-				A76573B32C25B2CE003EDB40 /* Sword.swift */,
 			);
-			path = Model;
+			path = Enemy;
+			sourceTree = "<group>";
+		};
+		A7E5C0AD2C54345F00E661B2 /* LevelOne */ = {
+			isa = PBXGroup;
+			children = (
+				A74ED3422C1645A900A83E2A /* LevelOneScene.swift */,
+				A7E5C0B02C5434FE00E661B2 /* LevelOneTouches.swift */,
+				A7E5C0AE2C54346C00E661B2 /* LevelOneCollisions.swift */,
+			);
+			path = LevelOne;
+			sourceTree = "<group>";
+		};
+		A7FF39112C570D38004821CD /* Loot */ = {
+			isa = PBXGroup;
+			children = (
+				A7FF39122C570D43004821CD /* Fruit.swift */,
+				A7FF39142C5724AE004821CD /* Coin.swift */,
+			);
+			path = Loot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +215,9 @@
 			dependencies = (
 			);
 			name = "Chroma Knight";
+			packageProductDependencies = (
+				A786BB572C81260A00DB3494 /* GoogleMobileAds */,
+			);
 			productName = "Chroma Knight";
 			productReference = A74ED31B2C11DD2800A83E2A /* Chroma Knight.app */;
 			productType = "com.apple.product-type.application";
@@ -191,6 +246,9 @@
 				Base,
 			);
 			mainGroup = A74ED3122C11DD2800A83E2A;
+			packageReferences = (
+				A786BB562C81260A00DB3494 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = A74ED31C2C11DD2800A83E2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,20 +280,26 @@
 			files = (
 				A7C62A9A2C493452000D5669 /* Slime.swift in Sources */,
 				A77A8EFB2C20E4BC002C8E5B /* Haptics.swift in Sources */,
+				A7FAFDBA2C5AF34C0083AABD /* Merchant.swift in Sources */,
 				A74ED3252C11DD2800A83E2A /* GameScene.swift in Sources */,
 				A74ED3272C11DD2800A83E2A /* GameViewController.swift in Sources */,
 				A74ED33A2C11DDEB00A83E2A /* MenuScene.swift in Sources */,
 				A74ED31F2C11DD2800A83E2A /* AppDelegate.swift in Sources */,
+				A7E5C0AF2C54346C00E661B2 /* LevelOneCollisions.swift in Sources */,
 				A7C62A9C2C493698000D5669 /* Ghost.swift in Sources */,
 				A77337272C21BE7E00B9F55F /* Player.swift in Sources */,
 				A74ED3382C11DDBD00A83E2A /* Utils.swift in Sources */,
 				A76573B42C25B2CE003EDB40 /* Sword.swift in Sources */,
 				A74ED3462C16485200A83E2A /* PauseNode.swift in Sources */,
+				A7E5C0AC2C5432EE00E661B2 /* SlimeKing.swift in Sources */,
+				A7E5C0B12C5434FE00E661B2 /* LevelOneTouches.swift in Sources */,
+				A7FF39132C570D43004821CD /* Fruit.swift in Sources */,
 				A74ED33C2C11DE0500A83E2A /* OptionsScene.swift in Sources */,
 				A7EABB252C164F61005938FE /* ConfigNode.swift in Sources */,
 				A7C62A982C4933B1000D5669 /* Enemy.swift in Sources */,
 				A74ED3432C1645A900A83E2A /* LevelOneScene.swift in Sources */,
 				A77A8EF92C20E49D002C8E5B /* SoundManager.swift in Sources */,
+				A7FF39152C5724AE004821CD /* Coin.swift in Sources */,
 				A74ED3412C11E04E00A83E2A /* UserConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -371,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -386,11 +450,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DFJUFQ6A3N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Chroma-Knight-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Chroma Knight";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -401,12 +468,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tpdias.Chroma-Knight";
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tpdias.ChromaKnightMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -415,11 +487,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DFJUFQ6A3N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Chroma-Knight-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Chroma Knight";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.adventure-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -430,12 +505,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tpdias.Chroma-Knight";
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tpdias.ChromaKnightMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -461,6 +541,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A786BB562C81260A00DB3494 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A786BB572C81260A00DB3494 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A786BB562C81260A00DB3494 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A74ED3132C11DD2800A83E2A /* Project object */;
 }

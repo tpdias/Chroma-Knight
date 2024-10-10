@@ -59,16 +59,16 @@ class PauseNode: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func checkPauseNodePressed(scene: SKScene, touchedNode: SKNode) {
+    func checkPauseNodePressed(scene: SKScene, touchedNode: SKNode) -> Bool {
         switch(touchedNode.name) {
         case "pauseButton" :
             animateButton(button: pauseButton)
             pauseButtonPressed()
-            break
+            return true
         case "resumeButton":
             animateButton(button: resumeButton)
             pauseButtonPressed()
-            break
+            return true
         case "homeButton":
             homeButtonPressed(scene: scene)
         case "optionsButton":
@@ -85,6 +85,7 @@ class PauseNode: SKNode {
         default:
             break
         }
+        return false
     }
     func closeButtonPressed() {
         self.run(waitForAnimation) {

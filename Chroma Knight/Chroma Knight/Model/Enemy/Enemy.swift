@@ -26,7 +26,7 @@ class Enemy {
     func moveEnemy(direction: CGFloat) {
         fatalError("moveEnemy(direction:) has not been implemented")
     }
-    func takeDamage(direction: CGFloat) -> Bool {
+    func takeDamage(direction: CGFloat, damage: Int) -> Bool {
         fatalError("takeDamage(direction:) has not been implemented")
     }
     func animateWlk() {
