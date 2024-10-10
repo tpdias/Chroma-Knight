@@ -65,8 +65,8 @@ class Player {
         animatePlayer()
     }
     
-    func increaseScore(level: Int) {
-        self.points += level
+    func increaseScore(points: Int) {
+        self.points += points
     }
     func incHp(hp: Int) {
         self.hp += hp

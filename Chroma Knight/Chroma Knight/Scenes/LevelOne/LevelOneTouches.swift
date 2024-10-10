@@ -14,8 +14,13 @@ extension LevelOneScene {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
             if let name = touchedNode.name {
-                if(name.contains("Button") || name.contains("Toggle")) {
+                if(name.contains("Button") && !name.contains("right") && !name.contains("left") && !name.contains("action") && !name.contains("Attack") && !name.contains("Pressed")) {
                     vibrate(with: .light)
+                    SoundManager.shared.playButtonSound()
+                }
+                if(name.contains("Toggle")) {
+                    vibrate(with: .light)
+                    SoundManager.shared.playToggleSound()
                 }
                 if let scene = self.view?.scene {
                     if(pauseNode.checkPauseNodePressed(scene: scene, touchedNode: touchedNode)) {

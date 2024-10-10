@@ -80,8 +80,9 @@ class PauseNode: SKNode {
             UserConfig.shared.changeVibration()
             animateToggle(toggle: configNode.vibrationToggle, isOn: UserConfig.shared.vibration)
         case "soundToggle":
-            SoundManager.shared.changeSound()
+            SoundManager.soundTrack.changeSound()
             animateToggle(toggle: configNode.soundToggle, isOn: SoundManager.shared.soundEnabled)
+            SoundManager.soundTrack.playSoundtrack()
         default:
             break
         }

@@ -186,7 +186,10 @@ extension LevelOneScene {
         }
         
         if player.sword.node.intersects(slimeKing.node) && !slimeKing.damageCD {
-            slimeKing.takeDamage()            
+            //if is killed
+            if slimeKing.takeDamage() {
+                player.increaseScore(points: 50)
+            }
         }
         
         if(checkGameOver()) {

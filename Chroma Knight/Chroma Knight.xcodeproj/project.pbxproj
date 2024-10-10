@@ -32,6 +32,8 @@
 		A7E5C0AC2C5432EE00E661B2 /* SlimeKing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E5C0AB2C5432EE00E661B2 /* SlimeKing.swift */; };
 		A7E5C0AF2C54346C00E661B2 /* LevelOneCollisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E5C0AE2C54346C00E661B2 /* LevelOneCollisions.swift */; };
 		A7E5C0B12C5434FE00E661B2 /* LevelOneTouches.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E5C0B02C5434FE00E661B2 /* LevelOneTouches.swift */; };
+		A7E8DC2A2CB83165006A2DC6 /* button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A7E8DC292CB83165006A2DC6 /* button.mp3 */; };
+		A7E8DC2D2CB8317E006A2DC6 /* toggle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A7E8DC2C2CB8317E006A2DC6 /* toggle.mp3 */; };
 		A7EABB252C164F61005938FE /* ConfigNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EABB242C164F61005938FE /* ConfigNode.swift */; };
 		A7FAFDBA2C5AF34C0083AABD /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FAFDB92C5AF34C0083AABD /* Merchant.swift */; };
 		A7FF39132C570D43004821CD /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FF39122C570D43004821CD /* Fruit.swift */; };
@@ -65,6 +67,8 @@
 		A7E5C0AB2C5432EE00E661B2 /* SlimeKing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlimeKing.swift; path = ../Enemy/SlimeKing.swift; sourceTree = "<group>"; };
 		A7E5C0AE2C54346C00E661B2 /* LevelOneCollisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOneCollisions.swift; sourceTree = "<group>"; };
 		A7E5C0B02C5434FE00E661B2 /* LevelOneTouches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOneTouches.swift; sourceTree = "<group>"; };
+		A7E8DC292CB83165006A2DC6 /* button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button.mp3; sourceTree = "<group>"; };
+		A7E8DC2C2CB8317E006A2DC6 /* toggle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = toggle.mp3; sourceTree = "<group>"; };
 		A7EABB242C164F61005938FE /* ConfigNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigNode.swift; sourceTree = "<group>"; };
 		A7FAFDB92C5AF34C0083AABD /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
 		A7FF39122C570D43004821CD /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
@@ -114,7 +118,7 @@
 				A74ED32B2C11DD2A00A83E2A /* Assets.xcassets */,
 				A74ED32D2C11DD2A00A83E2A /* LaunchScreen.storyboard */,
 				A74ED33E2C11DF6E00A83E2A /* Retro Gaming.ttf */,
-				A77A8EF62C20E00A002C8E5B /* backgroundMusic.mp3 */,
+				A7E8DC2B2CB83169006A2DC6 /* Sounds */,
 			);
 			path = "Chroma Knight";
 			sourceTree = "<group>";
@@ -188,6 +192,16 @@
 				A7E5C0AE2C54346C00E661B2 /* LevelOneCollisions.swift */,
 			);
 			path = LevelOne;
+			sourceTree = "<group>";
+		};
+		A7E8DC2B2CB83169006A2DC6 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A7E8DC292CB83165006A2DC6 /* button.mp3 */,
+				A7E8DC2C2CB8317E006A2DC6 /* toggle.mp3 */,
+				A77A8EF62C20E00A002C8E5B /* backgroundMusic.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		A7FF39112C570D38004821CD /* Loot */ = {
@@ -267,7 +281,9 @@
 				A74ED32C2C11DD2A00A83E2A /* Assets.xcassets in Resources */,
 				A77A8EF72C20E00B002C8E5B /* backgroundMusic.mp3 in Resources */,
 				A74ED32F2C11DD2A00A83E2A /* Base in Resources */,
+				A7E8DC2A2CB83165006A2DC6 /* button.mp3 in Resources */,
 				A74ED33F2C11DF6E00A83E2A /* Retro Gaming.ttf in Resources */,
+				A7E8DC2D2CB8317E006A2DC6 /* toggle.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

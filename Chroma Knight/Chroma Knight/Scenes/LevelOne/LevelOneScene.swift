@@ -85,7 +85,7 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate, GADFullScreenContentDele
         
         
         player = Player(size: size, sword: Sword(damage: 1, size: size, type: .basic))
-        ground = SKSpriteNode(color: .clear, size: CGSize(width: size.width, height: 10))
+        ground = SKSpriteNode(color: .clear, size: CGSize(width: size.width * 2, height: 10))
         ground.position = CGPoint(x: size.width/2, y: player.node.position.y - player.node.size.height/1.8)
         ground.physicsBody = SKPhysicsBody(rectangleOf: ground.size)
         ground.physicsBody?.isDynamic = false
@@ -164,7 +164,7 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate, GADFullScreenContentDele
                 self.addChild(newMerchant.node)
                 newMerchant.node.run(SKAction.fadeIn(withDuration: 0.5))
             }
-            if self.dificulty == 2 {
+            if self.dificulty == 4 {
                 self.slimeKing.isAlive = true
                 self.addChild(self.slimeKing.node)
                 self.slimeKing.spawn()
@@ -330,9 +330,12 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate, GADFullScreenContentDele
     }
     func calculateEnemyMovement() {
         for slime in slimes {
-            if(slime.node.position.x >= size.width + 10 || slime.node.position.x <= -10) {
-                slime.node.position.x = 10
-                slime.node.position.y = size.height + slime.node.size.height
+            if(slime.node.position.x >= size.width + 10/* || slime.node.position.x <= -10*/) {
+                slime.node.position.x = size.width
+                //slime.node.position.y = size.height + slime.node.size.height
+            }
+            if(slime.node.position.x <= -10) {
+                slime.node.position.x = -10
             }
             slime.moveEnemy(direction: player.node.position.x >= slime.node.position.x ? 1 : -1)
         }
@@ -346,7 +349,6 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate, GADFullScreenContentDele
             let diff = self?.dificulty ?? 1
             let health = diff
             let newSlime = Slime(hp: 1 + health, damage: 1, speed: CGFloat(8 + diff/2), level: diff)
-            //new
             let leftCorner = CGPoint(x: 0, y: (self?.ground.position.y ?? 0) + newSlime.node.size.height / 2 * 1.2)
             let rightCorner = CGPoint(x: self?.size.width ?? 0, y: (self?.ground.position.y ?? 0) + newSlime.node.size.height / 2 * 1.2)
             
@@ -371,7 +373,7 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate, GADFullScreenContentDele
         spawnNode.run(SKAction.repeatForever(SKAction.group([spawn, SKAction.wait(forDuration: 2.5)])))
     }
     func increaseScore() {
-        player.increaseScore(level: dificulty)
+        player.increaseScore(points: dificulty)
         scoreNode.text = "\(player.points)"
     }
     func increaseCombo() {

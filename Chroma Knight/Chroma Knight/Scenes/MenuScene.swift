@@ -26,7 +26,6 @@ class MenuScene: SKScene {
     
     override init(size: CGSize) {
     
-       print(size)
         var realSize = size
         if(realSize.width/realSize.height <= 1) {
             realSize = CGSize(width: 852, height: 393)
@@ -37,7 +36,6 @@ class MenuScene: SKScene {
         background.zPosition = -1
         background.alpha = 0.7
         background.name = "background"
-        print(realSize)
         
         titleLabel = SKLabelNode(text: "Chroma Knight")
         titleLabel.fontSize = 48
@@ -95,8 +93,7 @@ class MenuScene: SKScene {
         lastScoreLabel.zPosition = 1
         lastScoreLabel.horizontalAlignmentMode = .left
         super.init(size: realSize)
-        SoundManager.shared.stopSounds()
-        SoundManager.shared.playSoundtrack()
+        SoundManager.soundTrack.playSoundtrack()
         addChild(soundButton)
         addChild(background)
         addChild(playButton)
@@ -122,8 +119,13 @@ class MenuScene: SKScene {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
             if let name = touchedNode.name {
-                if(name.contains("Button")) {
+                if(name.contains("Button") ) {
                     vibrate(with: .light)
+                    SoundManager.shared.playButtonSound()
+                }
+                if(name.contains("Toggle")) {
+                    vibrate(with: .light)
+                    SoundManager.shared.playToggleSound()
                 }
                 
                 switch name {
@@ -141,7 +143,7 @@ class MenuScene: SKScene {
                 case "soundButton":
                     SoundManager.shared.changeSound()
                     animateSoundButton(button: soundButton, isOn: SoundManager.shared.soundEnabled)
-                    SoundManager.shared.playSoundtrack()
+                    SoundManager.soundTrack.playSoundtrack()
                 default:
                     break
                 }

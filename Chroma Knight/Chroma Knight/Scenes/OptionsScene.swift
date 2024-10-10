@@ -117,8 +117,13 @@ class OptionsScene: SKScene {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
             if let name = touchedNode.name {
-                if(name.contains("Toggle") || name.contains("Button")) {
+                if(name.contains("Button") ) {
                     vibrate(with: .light)
+                    SoundManager.shared.playButtonSound()
+                }
+                if(name.contains("Toggle")) {
+                    vibrate(with: .light)
+                    SoundManager.shared.playToggleSound()
                 }
                 switch name {
                 case "backButton":
@@ -127,8 +132,11 @@ class OptionsScene: SKScene {
                     animateButton(button: backButton)
                     transitionToNextScene(scene: menuScene)
                 case "soundToggle":
-                    SoundManager.shared.changeSound()
+                    SoundManager.soundTrack.changeSound()
                     animateToggle(toggle: soundToggle, isOn: SoundManager.shared.soundEnabled)
+                    if(SoundManager.soundTrack.soundEnabled) {
+                        SoundManager.soundTrack.playSoundtrack()
+                    }
                     break
                 case "vibrationToggle":
                     UserConfig.shared.changeVibration()

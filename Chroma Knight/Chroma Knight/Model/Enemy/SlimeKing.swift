@@ -63,23 +63,25 @@ class SlimeKing {
         node.run(SKAction.repeatForever(SKAction.animate(with: tiredTextures, timePerFrame: 1/TimeInterval(tiredTextures.count), resize: false, restore: false)), withKey: "animation")
     }
     
-    func takeDamage() {
+    func takeDamage() -> Bool {
         damageCD = true
         vibrate(with: .medium)
         hp -= 1
         node.run(SKAction.repeatForever(SKAction.animate(with: damageTextures, timePerFrame: 1/TimeInterval(damageTextures.count), resize: false, restore: false)), withKey: "animation")
         transitionToIdle()
-        checkIsAlive()
+        return !checkIsAlive()
     }
     
-    func checkIsAlive() {
+    func checkIsAlive() -> Bool {
         if(hp < 1) {
             isAlive = false
             node.removeAllActions()
             node.removeFromParent()
             fist.removeAllActions()
             fist.removeFromParent()
+            return false
         }
+        return true
     }
     
     func slimeAttack() {

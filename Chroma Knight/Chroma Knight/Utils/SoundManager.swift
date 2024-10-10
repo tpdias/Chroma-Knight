@@ -12,6 +12,7 @@ class SoundManager {
     static let shared = SoundManager()
     static let soundTrack = SoundManager()
     private var audioPlayer: AVAudioPlayer?
+    private var isPlaying: Bool = false
     var soundEnabled: Bool = true
     
     func playAudio(audio: String, loop: Bool, volume: Float) {
@@ -29,16 +30,36 @@ class SoundManager {
         }
     }
     func stopSounds() {
-        audioPlayer?.stop()
+        SoundManager.soundTrack.audioPlayer?.stop()
+        SoundManager.shared.audioPlayer?.stop()
+        SoundManager.soundTrack.isPlaying = false
     }
     
     func changeSound() {
-        soundEnabled.toggle()
-        if(!soundEnabled) {
-            self.stopSounds()
+        SoundManager.shared.soundEnabled.toggle()
+        SoundManager.soundTrack.soundEnabled.toggle()
+        if(!SoundManager.shared.soundEnabled) {
+            SoundManager.shared.stopSounds()
+        }
+        if(!SoundManager.soundTrack.soundEnabled) {
+            SoundManager.soundTrack.stopSounds()
+            SoundManager.soundTrack.isPlaying = false
         }
     }
     func playSoundtrack() {
-        SoundManager.shared.playAudio(audio: "backgroundMusic", loop: true, volume: 0.3)
+        if(!isPlaying && soundEnabled) {
+            playAudio(audio: "backgroundMusic", loop: true, volume: 0.3)
+            isPlaying = true    
+        }
+    }
+    func playButtonSound() {
+        if(soundEnabled) {
+            playAudio(audio: "button", loop: false, volume: 0.5)
+        }
+    }
+    func playToggleSound() {
+        if(soundEnabled) {
+            playAudio(audio: "toggle", loop: false, volume: 0.5)
+        }
     }
 }
