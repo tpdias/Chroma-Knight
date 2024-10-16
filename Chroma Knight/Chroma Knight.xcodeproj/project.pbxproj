@@ -25,7 +25,6 @@
 		A77A8EF72C20E00B002C8E5B /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A77A8EF62C20E00A002C8E5B /* backgroundMusic.mp3 */; };
 		A77A8EF92C20E49D002C8E5B /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A8EF82C20E49D002C8E5B /* SoundManager.swift */; };
 		A77A8EFB2C20E4BC002C8E5B /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A8EFA2C20E4BC002C8E5B /* Haptics.swift */; };
-		A786BB582C81260A00DB3494 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A786BB572C81260A00DB3494 /* GoogleMobileAds */; };
 		A7C62A982C4933B1000D5669 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C62A972C4933B1000D5669 /* Enemy.swift */; };
 		A7C62A9A2C493452000D5669 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C62A992C493452000D5669 /* Slime.swift */; };
 		A7C62A9C2C493698000D5669 /* Ghost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C62A9B2C493698000D5669 /* Ghost.swift */; };
@@ -80,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A786BB582C81260A00DB3494 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +228,6 @@
 			);
 			name = "Chroma Knight";
 			packageProductDependencies = (
-				A786BB572C81260A00DB3494 /* GoogleMobileAds */,
 			);
 			productName = "Chroma Knight";
 			productReference = A74ED31B2C11DD2800A83E2A /* Chroma Knight.app */;
@@ -261,7 +258,6 @@
 			);
 			mainGroup = A74ED3122C11DD2800A83E2A;
 			packageReferences = (
-				A786BB562C81260A00DB3494 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = A74ED31C2C11DD2800A83E2A /* Products */;
 			projectDirPath = "";
@@ -468,7 +464,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = DFJUFQ6A3N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Chroma-Knight-Info.plist";
@@ -484,7 +480,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tpdias.ChromaKnightMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -505,7 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = DFJUFQ6A3N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Chroma-Knight-Info.plist";
@@ -521,7 +517,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tpdias.ChromaKnightMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -557,25 +553,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A786BB562C81260A00DB3494 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 11.8.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A786BB572C81260A00DB3494 /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A786BB562C81260A00DB3494 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
-			productName = GoogleMobileAds;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A74ED3132C11DD2800A83E2A /* Project object */;
 }

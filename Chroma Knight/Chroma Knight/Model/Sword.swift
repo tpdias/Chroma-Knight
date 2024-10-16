@@ -73,12 +73,15 @@ class Sword {
     }
     func jumpAttack() {
         node.zRotation = 0
+        
+        node.removeAction(forKey: "rotation")
+        
         node.position = initialPos
         node.position.y += 15
         let rotationAction = SKAction.rotate(byAngle: -(.pi/2), duration: 0.2)
         switch type {
         case .katana:
-            node.run(SKAction.rotate(byAngle: .pi*(-2.25), duration: 0.5))
+            node.run(SKAction.rotate(byAngle: .pi*(-2.25), duration: 0.5), withKey: "rotation")
             //node.run(SKAction.sequence([SKAction.rotate(byAngle: .pi/2, duration: 0.2),SKAction.rotate(byAngle: -.pi*2, duration: 0.5)]))
         default:
             node.run(rotationAction)

@@ -1,12 +1,12 @@
 import Foundation
 import SpriteKit
 import UIKit
-import GoogleMobileAds
+//import GoogleMobileAds
 
-class LevelOneScene: SKScene, SKPhysicsContactDelegate, GADFullScreenContentDelegate {
+class LevelOneScene: SKScene, SKPhysicsContactDelegate/*, GADFullScreenContentDelegate*/ {
     
     //for ads
-    private var interstitial: GADInterstitialAd?
+//    private var interstitial: GADInterstitialAd?
     
     // Backgrounds
     var controllerBackground: SKSpriteNode
@@ -179,15 +179,15 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate, GADFullScreenContentDele
     
     override func sceneDidLoad() {
         super.sceneDidLoad()
-        let adUnitID = "ca-app-pub-1405347505060440/9572593172" // Coloque aqui o ID do seu bloco de anúncios
-        GADInterstitialAd.load(withAdUnitID: adUnitID, request: GADRequest()) { [weak self] ad, error in
-            if let error = error {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                return
-            }
-            self?.interstitial = ad
-            self?.interstitial?.fullScreenContentDelegate = self
-        }
+//        let adUnitID = "ca-app-pub-1405347505060440/9572593172" // Coloque aqui o ID do seu bloco de anúncios
+//        GADInterstitialAd.load(withAdUnitID: adUnitID, request: GADRequest()) { [weak self] ad, error in
+//            if let error = error {
+//                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+//                return
+//            }
+//            self?.interstitial = ad
+//            self?.interstitial?.fullScreenContentDelegate = self
+//        }
     }
     
     override func didMove(to view: SKView) {
@@ -285,14 +285,14 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate, GADFullScreenContentDele
     
     func gameOver() {
         self.isPaused.toggle()
-        if let interstitial = self.interstitial {
-            if let viewController = self.view?.window?.rootViewController {
-                interstitial.present(fromRootViewController: viewController)
-            }
-        } else {
-            print("ad wasn't ready")
+//        if let interstitial = self.interstitial {
+//            if let viewController = self.view?.window?.rootViewController {
+//                interstitial.present(fromRootViewController: viewController)
+//            }
+//        } else {
+//            print("ad wasn't ready")
             presentMenuScene()
-        }
+       // }
     }
     
     //new
@@ -313,6 +313,7 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate, GADFullScreenContentDele
         for ghost in ghosts {
             ghost.node.isPaused = pauseStatus
         }
+        slimeKing.node.isPaused = pauseStatus
         player.node.isPaused = pauseStatus
         spawnNode.isPaused = pauseStatus
     }
@@ -413,17 +414,17 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate, GADFullScreenContentDele
         merchant?.node.run(SKAction.sequence([SKAction.fadeOut(withDuration: 0.5), action]))
     }
     
-    func loadInterstitialAd() {
-        let adUnitID = "your-ad-unit-id" // Coloque aqui o ID do seu bloco de anúncios
-        GADInterstitialAd.load(withAdUnitID: adUnitID, request: GADRequest()) { [weak self] ad, error in
-            if let error = error {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                return
-            }
-            self?.interstitial = ad
-            self?.interstitial?.fullScreenContentDelegate = self
-        }
-    }
+//    func loadInterstitialAd() {
+//        let adUnitID = "your-ad-unit-id" // Coloque aqui o ID do seu bloco de anúncios
+//        GADInterstitialAd.load(withAdUnitID: adUnitID, request: GADRequest()) { [weak self] ad, error in
+//            if let error = error {
+//                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+//                return
+//            }
+//            self?.interstitial = ad
+//            self?.interstitial?.fullScreenContentDelegate = self
+//        }
+//    }
     
     func presentMenuScene() {
         let scene = MenuScene(size: self.size)
@@ -431,15 +432,15 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate, GADFullScreenContentDele
         self.view?.presentScene(scene)
     }
     
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        // Ad foi fechado, mudar para a próxima cena
-        presentMenuScene()
-    }
-    
-    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        print("Ad failed to present with error: \(error.localizedDescription)")
-        // Se o anúncio falhar ao ser apresentado, mudar para a próxima cena
-        presentMenuScene()
-    }
+//    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+//        // Ad foi fechado, mudar para a próxima cena
+//        presentMenuScene()
+//    }
+//    
+//    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+//        print("Ad failed to present with error: \(error.localizedDescription)")
+//        // Se o anúncio falhar ao ser apresentado, mudar para a próxima cena
+//        presentMenuScene()
+//    }
 }
 
